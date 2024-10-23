@@ -21,5 +21,3 @@ def generate_random_data(n_households, seed):
     })
     return df
 
-df = generate_random_data(100, 5)
-print(df)
