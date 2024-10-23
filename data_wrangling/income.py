@@ -15,6 +15,6 @@ def compute_main_earner_female(df):
         pl.col("income").max().alias("max_income"),
         pl.col("female").filter(pl.col("income") == pl.col("income").max()).first().alias("main_earner_female")
     ]).with_columns(
-        pl.when(pl.col("main_earner_female")).then("yes").otherwise("no").alias("main_earner_female")
+        pl.when(pl.col("main_earner_female")).then(pl.lit("yes")).otherwise(pl.lit("no")).alias("main_earner_female")
     )
 
