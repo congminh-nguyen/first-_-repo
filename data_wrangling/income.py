@@ -10,10 +10,11 @@ def compute_mean_total_income(df):
     ])
 
 # Function to compute main earner female
-def compute_main_earner_female(df): 
-    return df.group_by("household_id").agg(
-        (pl.col("income").arg_max() == pl.col("female")).alias("main_earner_female")
-    ).with_columns(
-        pl.when(pl.col("main_earner_female")).then("yes").otherwise("no")
+def compute_main_earner_female(df):
+    return df.group_by("household_id").agg([
+        pl.col("income").max().alias("max_income"),
+        pl.col("female").filter(pl.col("income") == pl.col("income").max()).first().alias("main_earner_female")
+    ]).with_columns(
+        pl.when(pl.col("main_earner_female")).then("yes").otherwise("no").alias("main_earner_female")
     )
 
