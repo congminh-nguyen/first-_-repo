@@ -1,7 +1,3 @@
-# Import libraries
-import numpy as np
-import polars as pl
-
 # Function to generate random data
 def generate_random_data(n_households, seed):
     np.random.seed(seed) # Set seed for reproducibility
