@@ -1,0 +1,10 @@
+# Potential use cases for simulated household data
+
+1. **Economic Research**: 
+   - Simulated model predictions on household income by age and gender distribution. 
+   
+2. **Evaluating econometric models**: 
+   - Simulated data can be controlled in terms of data generating processes, and hence allows to study how well econometric models perform in estimating effects of interest (such as income disparity between households with female vs. male main earners).
+
+3. **Machine Learning Model Development**: 
+   - Allows to control the data generating process, and hence allows to study how well machine learning models perform in predicting household income based on other variables; easily separting training, validation and testing data.
