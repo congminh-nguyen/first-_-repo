@@ -20,11 +20,12 @@ def compute_household_features(df):
                   .join(mean_total_income, on="household_id")\
                   .join(main_earner_female, on="household_id")
 
+# Test
 df = generate.generate_random_data(100, 10)
 
 df_final = compute_household_features(df)
 
-
+print(df_final)
 
 
 
