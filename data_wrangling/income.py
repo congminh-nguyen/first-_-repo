@@ -13,7 +13,7 @@ def compute_mean_total_income(df):
 def compute_main_earner_female(df): 
     return df.group_by("household_id").agg(
         (pl.col("income").arg_max() == pl.col("female")).alias("main_earner_female")
-    ).with_column(
+    ).with_columns(
         pl.when(pl.col("main_earner_female")).then("yes").otherwise("no")
     )
 
