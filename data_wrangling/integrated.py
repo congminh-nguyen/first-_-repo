@@ -1,5 +1,4 @@
 # Import libraries
-import polars as pl
 import numpy as np
 import generate, age, income, hhsize, fem_child
 
