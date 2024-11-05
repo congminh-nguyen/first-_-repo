@@ -1,0 +1,8 @@
+When you added your .gitignore to your repo to ignore .csv files, was the
+file indeed ignored?
+Yes, when I added the .gitignore file to my repository and specified that .csv files should be ignored, the .csv files were indeed ignored by Git. This means that any .csv files in the repository were not tracked by Git and were not included in commits.
+
+Why do we have to add additional
+dependencies to mypy in the .pre-commit-
+config.yaml ?
+We have to add additional dependencies to mypy in the .pre-commit-config.yaml file because mypy needs to understand the types and structures provided by those dependencies in order to perform type checking correctly. For example, if our code uses libraries like numpy or polars, mypy needs to have access to the type information for those libraries to check for type errors accurately. By specifying these additional dependencies, we ensure that mypy can properly analyze our code and catch potential type issues.

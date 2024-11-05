@@ -17,6 +17,8 @@ repos:
     rev: v1.13.0  # Use 'pre-commit autoupdate' to get the latest version
     hooks:
     -   id: mypy
+        additional_dependencies: [numpy, polars]
+        args: ["--ignore-missing-imports", "--strict"]
 -   repo: https://github.com/codespell-project/codespell
     rev: v2.3.0  # Use 'pre-commit autoupdate' to get the latest version
     hooks:

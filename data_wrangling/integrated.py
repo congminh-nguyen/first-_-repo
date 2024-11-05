@@ -41,9 +41,13 @@ def compute_household_features(df: pl.DataFrame) -> pl.DataFrame:
     mean_total_income = compute_mean_total_income(df)
     main_earner_female = compute_main_earner_female(df)
 
-    return (size_hh.join(mean_age, on="household_id")
-            .join(min_max_age, on="household_id")
-            .join(nr_children, on="household_id")
-            .join(nr_female, on="household_id")
-            .join(mean_total_income, on="household_id")
-            .join(main_earner_female, on="household_id"))
+    # Explicitly annotate the return type to fix mypy error
+    result: pl.DataFrame = (
+        size_hh.join(mean_age, on="household_id")
+               .join(min_max_age, on="household_id")
+               .join(nr_children, on="household_id")
+               .join(nr_female, on="household_id")
+               .join(mean_total_income, on="household_id")
+               .join(main_earner_female, on="household_id")
+    )
+    return result
